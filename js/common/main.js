@@ -11,6 +11,12 @@ require.config({
         jqueryCookie:'lib/jquery-cookie/jquery.cookie',
         nprogress:'lib/nprogress/nprogress',
         template:'lib/artTemplate-3.0.1/template',
+        datepicker:'lib/bootstrap-datepicker/js/bootstrap-datepicker',
+        datepickerLanguage:'lib/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
+        region:'lib/region/jquery.region',
+        uploadify:'lib/uploadify/jquery.uploadify',
+        ckeditor: 'lib/ckeditor/ckeditor',
+
 
 
         //自己写的路径配置
@@ -29,12 +35,22 @@ require.config({
         repass:'js/home/repass',
         settings:'js/home/settings',
         teacherAdd:'js/teacher/add',
+        util:'js/common/util',
         teacherList:'js/teacher/list',
         index:'js/index'
     },
     shim:{
         bootstrap:{
             deps:['jquery']
+        },
+        datepickerLanguage:{
+            deps:['jquery','datepicker']
+        },
+        uploadify:{
+            deps:['jquery']
+        },
+        ckeditor: {
+            exports: 'CKEDITOR'
         }
     }
 });
@@ -128,6 +144,4 @@ require(['jquery','bootstrap','common']);
                 break;
         }
     })
-
-
 })(window);
